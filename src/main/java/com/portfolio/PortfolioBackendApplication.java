@@ -8,12 +8,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class PortfolioBackendApplication {
     public static void main(String[] args) {
         SpringApplication.run(PortfolioBackendApplication.class, args);
-         String plainPassword = "admin123";  // le mot de passe en clair à hacher
+        /*String plainPassword = "admin123";  // le mot de passe en clair à hacher
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
         String hashedPassword = encoder.encode(plainPassword);
 
         System.out.println("Mot de passe en clair : " + plainPassword);
-        System.out.println("Mot de passe haché BCrypt : " + hashedPassword);
+        System.out.println("Mot de passe haché BCrypt : " + hashedPassword);*/
     }
 }
