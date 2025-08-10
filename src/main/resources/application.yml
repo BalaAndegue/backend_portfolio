@@ -1,0 +1,48 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/portfolio_db
+    username: ${DB_USERNAME:portfolio_user}
+    password: ${DB_PASSWORD:portfolio_password}
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+  
+  mail:
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME:balaandeguefrancoislionnel@gmail.com}
+    password: ${MAIL_PASSWORD:ajmx pjka zoyb jddr}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+jwt:
+  secret: ${JWT_SECRET:bXlTZWNyZXRLZXkxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTA=}
+  expiration: 86400000 # 24 hours
+
+cors:
+  allowed-origins: ${CORS_ORIGINS:http://localhost:3000,https://my-domain.com}
+
+file:
+  upload-dir: ${FILE_UPLOAD_DIR:./uploads}
+  max-size: 10MB
+
+logging:
+  level:
+    com.portfolio: DEBUG
+    org.springframework.security: DEBUG
